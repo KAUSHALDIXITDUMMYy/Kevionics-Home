@@ -5,6 +5,7 @@ import { Features } from './components/Features'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Nav } from './components/Nav'
+import { SceneBackground } from './components/SceneBackground'
 import './App.css'
 
 function App() {
@@ -18,8 +19,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-pattern" aria-hidden="true" />
-      <div className="bg-glow" aria-hidden="true" />
+      <SceneBackground />
       <Nav />
       <main>
         <Hero />

@@ -1,0 +1,243 @@
+/* Globex-style layered motion: mesh, orbs, grid, rings — respects reduced motion */
+
+.scene-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.scene-bg__mesh {
+  position: absolute;
+  inset: -45%;
+  background:
+    radial-gradient(ellipse 55% 45% at 15% 20%, rgba(37, 99, 235, 0.18), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 15%, rgba(56, 189, 248, 0.12), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 70% 85%, rgba(11, 79, 155, 0.2), transparent 55%),
+    conic-gradient(from 210deg at 50% 50%, rgba(13, 71, 161, 0.15), transparent 40%, rgba(56, 189, 248, 0.08), transparent 75%);
+  animation: scene-bg-mesh 26s ease-in-out infinite alternate;
+}
+
+.scene-bg__orbs {
+  position: absolute;
+  inset: 0;
+}
+
+.scene-bg__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.scene-bg__orb--a {
+  width: min(55vmin, 420px);
+  height: min(55vmin, 420px);
+  background: radial-gradient(circle at 35% 35%, rgba(56, 189, 248, 0.55), rgba(37, 99, 235, 0.25) 45%, transparent 70%);
+  top: -8%;
+  left: -12%;
+  animation: scene-bg-orb-a 22s ease-in-out infinite;
+}
+
+.scene-bg__orb--b {
+  width: min(42vmin, 360px);
+  height: min(42vmin, 360px);
+  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.45), rgba(11, 79, 155, 0.2) 50%, transparent 70%);
+  bottom: 5%;
+  right: -8%;
+  animation: scene-bg-orb-b 28s ease-in-out infinite;
+}
+
+.scene-bg__orb--c {
+  width: min(35vmin, 280px);
+  height: min(35vmin, 280px);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.35), transparent 65%);
+  top: 38%;
+  left: 42%;
+  animation: scene-bg-orb-c 18s ease-in-out infinite;
+}
+
+.scene-bg__grid {
+  position: absolute;
+  inset: -1px;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+  animation: scene-bg-grid-drift 48s linear infinite;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, #000 20%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, #000 20%, transparent 72%);
+}
+
+.scene-bg__rings {
+  position: absolute;
+  top: 50%;
+  right: min(-8%, -4rem);
+  width: min(90vmin, 520px);
+  height: min(90vmin, 520px);
+  translate: 0 -50%;
+  pointer-events: none;
+}
+
+.scene-bg__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-bg__ring--1 {
+  animation: scene-bg-spin 80s linear infinite;
+}
+
+.scene-bg__ring--2 {
+  animation: scene-bg-spin-reverse 55s linear infinite;
+  scale: 0.92;
+}
+
+.scene-bg__lines {
+  position: absolute;
+  inset: 0;
+}
+
+.scene-bg__line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.35), transparent);
+  opacity: 0.45;
+  will-change: transform, opacity;
+}
+
+.scene-bg__line--1 {
+  top: 22%;
+  left: -5%;
+  width: 55%;
+  animation: scene-bg-line-slide 14s ease-in-out infinite;
+}
+
+.scene-bg__line--2 {
+  top: 58%;
+  right: -5%;
+  width: 48%;
+  animation: scene-bg-line-slide 18s ease-in-out infinite 2s;
+}
+
+.scene-bg__line--3 {
+  bottom: 18%;
+  left: 10%;
+  width: 38%;
+  animation: scene-bg-line-slide 16s ease-in-out infinite 4s;
+}
+
+.scene-bg__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 75% 65% at 50% 45%, transparent 30%, rgba(0, 13, 26, 0.55) 100%);
+  pointer-events: none;
+}
+
+@keyframes scene-bg-mesh {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translate(2.5%, -1.5%) rotate(4deg) scale(1.03);
+  }
+}
+
+@keyframes scene-bg-orb-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6%, 5%) scale(1.08);
+  }
+}
+
+@keyframes scene-bg-orb-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-5%, -4%) scale(1.06);
+  }
+}
+
+@keyframes scene-bg-orb-c {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(8%, -6%);
+  }
+  66% {
+    transform: translate(-4%, 4%);
+  }
+}
+
+@keyframes scene-bg-grid-drift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 72px 72px, 72px 72px;
+  }
+}
+
+@keyframes scene-bg-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scene-bg-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes scene-bg-line-slide {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: translateX(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-bg__mesh,
+  .scene-bg__orb,
+  .scene-bg__grid,
+  .scene-bg__ring--1,
+  .scene-bg__ring--2,
+  .scene-bg__line {
+    animation: none !important;
+  }
+
+  .scene-bg__orb--c {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scene-bg__rings {
+    right: -25%;
+    opacity: 0.65;
+    width: min(100vmin, 100%);
+  }
+}

@@ -35,29 +35,32 @@ export function Nav() {
           />
           <span className="nav__logo-wordmark">KEVIONICS</span>
         </a>
-        <button
-          type="button"
-          className="nav__toggle"
-          aria-label="Toggle menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-        <nav className={`nav__links ${mobileOpen ? 'nav__links--open' : ''}`}>
-          {links.map(({ href, label }) => (
-            <a
-              key={href}
-              href={href}
-              className="nav__link"
-              onClick={() => setMobileOpen(false)}
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
+        <div className="nav__aside">
+          <nav className={`nav__links ${mobileOpen ? 'nav__links--open' : ''}`} id="nav-menu">
+            {links.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className="nav__link"
+                onClick={() => setMobileOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+          <button
+            type="button"
+            className="nav__toggle"
+            aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="nav-menu"
+            onClick={() => setMobileOpen((o) => !o)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </header>
   )
