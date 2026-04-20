@@ -21,8 +21,19 @@ export function Nav() {
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''} ${mobileOpen ? 'nav--menu-open' : ''}`}>
       <div className="nav__inner">
-        <a href="#hero" className="nav__logo">
-          <span className="nav__logo-text">KEVIONICS</span>
+        <a href="#hero" className="nav__logo" aria-label="KEVIONICS — home">
+          <img
+            src="/logo.svg"
+            alt=""
+            width={44}
+            height={44}
+            className="nav__logo-img"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none'
+            }}
+          />
+          <span className="nav__logo-wordmark">KEVIONICS</span>
         </a>
         <button
           type="button"

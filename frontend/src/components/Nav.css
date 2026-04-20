@@ -26,15 +26,26 @@
 }
 
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   text-decoration: none;
   color: var(--text);
 }
 
-.nav__logo-text {
+.nav__logo-img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 12px rgba(37, 99, 235, 0.22));
+}
+
+.nav__logo-wordmark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.125rem;
-  letter-spacing: 0.18em;
+  font-size: 1.0625rem;
+  letter-spacing: 0.16em;
   color: #fff;
 }
 

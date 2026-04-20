@@ -58,7 +58,7 @@ export function Hero() {
       <div className="hero__content">
         <div className="hero__logo-wrap">
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt="KEVIONICS"
             className="hero__logo-img"
             onError={(e) => {
