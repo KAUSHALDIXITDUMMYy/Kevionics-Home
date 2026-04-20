@@ -1,15 +1,27 @@
 :root {
-  --bg-dark: #0a0a0b;
-  --bg-card: #121214;
-  --gold: #c9a227;
-  --gold-light: #e5c158;
-  --gold-dim: #8b7312;
-  --gold-glow: rgba(201, 162, 39, 0.4);
-  --text: #e8e6e3;
-  --text-muted: #9a968f;
-  --border: rgba(201, 162, 39, 0.2);
-  --font-display: 'Orbitron', sans-serif;
-  --font-body: 'Rajdhani', sans-serif;
+  /* Brand — Kevionics tech blue stream */
+  --navy-deep: #000d1a;
+  --navy: #051635;
+  --navy-mid: #0c1e35;
+  --blue-royal: #0b4f9b;
+  --blue-accent: #2563eb;
+  --blue-bright: #38bdf8;
+  --blue-sky: #4a9fe8;
+  --accent-glow: rgba(74, 159, 232, 0.35);
+
+  --bg-deep: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 45%, #061428 100%);
+  --bg-card: rgba(12, 30, 53, 0.75);
+  --bg-card-solid: #0c1e35;
+
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-accent: var(--blue-bright);
+
+  --border: rgba(56, 189, 248, 0.14);
+  --border-strong: rgba(37, 99, 235, 0.35);
+
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
 *,
@@ -26,30 +38,36 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-dark);
+  background: var(--navy-deep);
+  background-image: var(--bg-deep);
+  background-attachment: fixed;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
   min-height: 100vh;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 a {
-  color: var(--gold);
+  color: var(--blue-bright);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--gold-light);
+  color: var(--blue-sky);
 }
 
 button {
@@ -66,37 +84,41 @@ img {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
+  padding: 0.78rem 1.6rem;
   font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border-radius: 6px;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.15s ease;
   border: 2px solid transparent;
 }
 
 .btn--primary {
-  background: var(--gold);
-  color: var(--bg-dark);
-  border-color: var(--gold);
+  background: linear-gradient(135deg, var(--blue-accent) 0%, var(--blue-royal) 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
 }
 
 .btn--primary:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  color: var(--bg-dark);
-  box-shadow: 0 0 20px var(--gold-glow);
+  background: linear-gradient(135deg, #3b82f6 0%, var(--blue-accent) 100%);
+  color: #fff;
+  box-shadow: 0 6px 28px rgba(56, 189, 248, 0.3);
+  transform: translateY(-1px);
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--gold);
-  border-color: var(--gold);
+  color: var(--text);
+  border-color: rgba(56, 189, 248, 0.45);
 }
 
 .btn--outline:hover {
-  background: rgba(201, 162, 39, 0.15);
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+  background: rgba(37, 99, 235, 0.12);
+  border-color: var(--blue-bright);
+  color: #fff;
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.12);
 }

@@ -14,7 +14,7 @@ export function Nav() {
   const links = [
     { href: '#hero', label: 'Home' },
     { href: '#about', label: 'About' },
-    { href: '#features', label: 'Solutions' },
+    { href: '#features', label: 'Services' },
     { href: '#contact', label: 'Contact' },
   ]
 

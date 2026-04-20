@@ -5,8 +5,47 @@
 
 .contact__intro {
   color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.contact__phone {
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+}
+
+.contact__phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__phone-link:hover {
+  border-color: var(--border-strong);
+  background: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+  color: #fff;
+}
+
+.contact__phone-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+}
+
+.contact__phone-num {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
 }
 
 .contact__form {
@@ -22,17 +61,17 @@
 }
 
 .contact__label span {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 .contact__input {
-  background: var(--bg-card);
+  background: var(--bg-card-solid);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
@@ -41,13 +80,13 @@
 
 .contact__input::placeholder {
   color: var(--text-muted);
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .contact__input:focus {
   outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px var(--gold-glow);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .contact__textarea {
@@ -66,9 +105,9 @@
 }
 
 .contact__feedback--success {
-  color: var(--gold-light);
+  color: var(--blue-bright);
 }
 
 .contact__feedback--error {
-  color: #e07a7a;
+  color: #f87171;
 }

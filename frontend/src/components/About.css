@@ -10,7 +10,8 @@
   font-size: 1.2rem;
   color: var(--text);
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-weight: 500;
 }
 
 .about__text {
@@ -24,8 +25,8 @@
 
 .about__list li {
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
+  padding-left: 1.75rem;
+  margin-bottom: 0.6rem;
   color: var(--text-muted);
 }
 
@@ -33,12 +34,12 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 0.5em;
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
+  top: 0.45em;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--blue-bright), var(--blue-accent));
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--gold-glow);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .about__visual {
@@ -51,7 +52,12 @@
 .about__hex {
   position: absolute;
   inset: 10%;
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.08), transparent);
+  background: linear-gradient(
+    145deg,
+    rgba(37, 99, 235, 0.12) 0%,
+    rgba(56, 189, 248, 0.06) 50%,
+    transparent 100%
+  );
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   border: 1px solid var(--border);
 }
@@ -59,8 +65,8 @@
 .about__circuit {
   position: absolute;
   inset: 0;
-  color: var(--gold);
-  opacity: 0.5;
+  color: var(--blue-bright);
+  opacity: 0.45;
 }
 
 .about__circuit svg {

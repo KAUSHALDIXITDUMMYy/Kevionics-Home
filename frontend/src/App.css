@@ -2,9 +2,10 @@
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, var(--gold-glow) 0%, transparent 50%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0L60 17.32V52.98L30 70 0 52.98V17.32z' fill='none' stroke='rgba(201,162,39,0.06)' stroke-width='0.5'/%3E%3C/svg%3E");
-  background-size: 100% 100%, 60px 52px;
+    radial-gradient(ellipse 90% 55% at 50% -15%, rgba(74, 159, 232, 0.12) 0%, transparent 52%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(11, 79, 155, 0.18) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(148,163,184,0.08)'/%3E%3C/svg%3E");
+  background-size: 100% 100%, 100% 100%, 24px 24px;
   pointer-events: none;
   z-index: 0;
 }
@@ -12,8 +13,9 @@
 .bg-glow {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 35%);
+  background:
+    radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.1) 0%, transparent 42%),
+    radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.06) 0%, transparent 38%);
   pointer-events: none;
   z-index: 0;
 }
@@ -31,11 +33,11 @@ section {
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
   font-weight: 700;
-  color: var(--gold);
+  color: var(--blue-bright);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -45,8 +47,9 @@ section {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -4px;
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
+  bottom: -6px;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-accent), transparent);
+  border-radius: 2px;
 }

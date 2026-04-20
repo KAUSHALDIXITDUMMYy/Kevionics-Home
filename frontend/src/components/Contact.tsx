@@ -27,10 +27,16 @@ export function Contact() {
 
   return (
     <section id="contact" className="contact">
-      <h2 className="section-title">Get in Touch</h2>
+      <h2 className="section-title">Contact</h2>
       <div className="contact__wrap">
         <p className="contact__intro">
-          Have a project in mind or want to learn more? We&apos;d love to hear from you.
+          Have a project in mind or want to learn more? We welcome our clients — feel free to reach out.
+        </p>
+        <p className="contact__phone">
+          <a href="tel:+919529665951" className="contact__phone-link">
+            <span className="contact__phone-label">Call</span>
+            <span className="contact__phone-num">+91 95296 65951</span>
+          </a>
         </p>
         <form className="contact__form" onSubmit={handleSubmit}>
           <label className="contact__label">
@@ -70,7 +76,7 @@ export function Contact() {
             />
           </label>
           <button type="submit" className="btn btn--primary contact__submit" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Sending...' : 'Send Message'}
+            {status === 'sending' ? 'Sending...' : 'Send message'}
           </button>
           {status === 'done' && <p className="contact__feedback contact__feedback--success">Message sent. We&apos;ll be in touch.</p>}
           {status === 'error' && <p className="contact__feedback contact__feedback--error">Something went wrong. Please try again.</p>}

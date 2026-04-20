@@ -42,7 +42,7 @@ export function Hero() {
         const alpha = 0.4 + 0.3 * Math.sin((frame * 0.02 + p.x * 0.01))
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(201, 162, 39, ${alpha})`
+        ctx.fillStyle = `rgba(74, 159, 232, ${alpha})`
         ctx.fill()
       })
       requestAnimationFrame(animate)
@@ -74,9 +74,10 @@ export function Hero() {
           </div>
         </div>
         <h1 className="hero__title">KEVIONICS</h1>
-        <p className="hero__tagline">Innovation in Technology</p>
+        <p className="hero__tagline">Innovate • Build • Grow</p>
         <p className="hero__desc">
-          Where advanced engineering meets tomorrow&apos;s solutions. We build systems that power progress.
+          We code your <span className="hero__accent">vision</span>, we build your{' '}
+          <span className="hero__accent">success</span>. Smart solutions for a stronger tomorrow.
         </p>
         <div className="hero__cta">
           <a href="#about" className="btn btn--primary">
